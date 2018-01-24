@@ -1,7 +1,8 @@
 ![jason logo](https://raw.githubusercontent.com/if-loop/jason/master/public/img/logo_dark.png)
-[offical source of jason.codefactory.at](http://jason.codefactory.at)
 
 Jason is an excel to schema.org converter. It uses Jason Config files to map your excel sheet to the right schema.org annotation. For a demofile check /server/jasonConfig.json (it converts an excel of scholarly articles to the ScholarlyArticle schema.org annotation. 
+
+You can check it out at [offical source of jason.codefactory.at](http://jason.codefactory.at)
 
 ## Mapping
 Cells with uppercase text will be ignored (use them for heading)
