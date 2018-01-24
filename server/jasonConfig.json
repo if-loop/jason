@@ -1,0 +1,23 @@
+{
+  "name": "TourismusWissenQuarterly",
+  "version": "1",
+  "author": "Leonhartsberger-Schrott Alexander & Lexer Matthias",
+  "semantifyIt": {
+    "enabled" : false,
+    "key": "rkZf5JBHf"
+  },
+  "mapping": {
+    "@context": "http://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "$H$",
+    "author": "$A$, $B$",
+    "copyrightYear": "$NUM$20$C$",
+    "about": [ "$F$", "$G$"],
+    "volumeNumber": "$NUM$$C$",
+    "articleSection": "Tourismus Wissen Quarterly",
+    "pageStart":"$NUM$$E$",
+    "pageEnd": "$NUM$$E$",
+    "image": "",
+    "headline": "$H$"
+  }
+}

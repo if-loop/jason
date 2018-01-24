@@ -1,0 +1,98 @@
+<div class="container-fullwidth" style="margin-left: 50px; margin-right: 50px;">
+    <div class="row  fill" ng-if="!fileSuccess">
+            <div class="col-md-12">
+                    <div class="card card-tut" style="margin-top: 20px;">
+                        <div class="card-body">
+                            <h4 class="card-title" ng-if="!fileSuccess">Welcome</h4>
+                            <span class="tut-text">Jason helps you to to convert your dusty excel lists to JSON and feed it to semantify.it</span>
+                            <div class="row">
+                            <div class="col-md-6 text-center"><img src="img/upload.png" class="tut-pic" width="200" height="200"></div>
+                            <div class="col-md-6 text-center"><img src="img/check.png" class="tut-pic" width="200" height="200"></div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        <div class="col-md-12">
+            <div class="card" style="margin-top: 10px;">
+                <div class="card-body">
+                    <h4 class="card-title" ng-if="fileSuccess">File (as JSON)</h4>
+
+                    <div class="dropzone card-text" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"
+                         ng-dropzone></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-if="fileSuccess">
+        <div class="col-md-8">
+            <div class="card card-tut" style="margin-top: 20px;">
+                <div class="card-body">
+                    <span class="tut-text">
+                    <h4 class="card-title">Jason Config File</h4>
+                    <div><b>Name:</b> {{uploadedFile.jasonConfig.name}}</div>
+                    <div><b>Version:</b> {{uploadedFile.jasonConfig.version}}</div>
+                    <div><b>Author:</b> {{uploadedFile.jasonConfig.author}}</div>
+                    <div><b>Upload zu Semantify:</b> {{uploadedFile.jasonConfig.semantifyIt.enabled}}</div>
+                    </span>
+                    <div class="text-right">
+                    <button ng-if="!uploadedFile.jasonConfig.semantifyIt.enabled" ng-click="semantifyIt()" type="button" class="btn btn-primary text-right" style="margin-top:10px;background-color:#17a2b8; border: 1px solid white;">Manuell an Semantify schicken</button>
+                </div>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 20px;">
+                <div class="card-body">
+                    <h4 class="card-title">File (as Table)</h4>
+                    <table class="table table-striped card-text" ts-wrapper style="font-size: 10pt;">
+                        <thead>
+                            <col width="60%">
+                            <col width="20%">
+                            <col width="20%">
+                        <tr>
+                            <th ts-criteria="name|lowercase" ts-default>Title</th>
+                            <th ts-criteria="author|lowercase">Author</th>
+                            <th class="d-none d-md-block" ts-criteria="copyrightYear|parseInt">Year</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in uploadedFile.output" ts-repeat ts-hide-no-data>
+                            <td>{{item.name}}</td>
+                            <td>{{item.author}}</td>
+                            <td class="d-none d-md-block">{{item.copyrightYear}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+                <div class="card  helper d-none d-md-block" style="margin-top: 20px;">
+                        <div class="card-body">
+                            <h4 class="card-title">What is this?</h4>
+                            <p class="card-text">
+                                This is the information we could get from your excel file based on your config file. <br><br>
+                                You can see the properties of the config file in the green box.<br><br>
+                                Scroll down for a raw JSON display, or enjoy the table version to your left.
+                            </p>
+                        </div>
+                    </div>
+            <div class="card" style="margin-top: 20px;">
+                <div class="card-body">
+                    <h4 class="card-title">Mapping (as JSON)</h4>
+                    <p class="card-text">
+                        <json-formatter json="uploadedFile.jasonConfig.mapping" open="1"></json-formatter>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+                <div class="card" id="json-raw" style="margin-top: 20px;">
+                        <div class="card-body">
+                            <h4 class="card-title">File (as JSON)</h4>
+                            <p class="card-text">
+                                <json-formatter json="uploadedFile.output" open="1"></json-formatter>
+                            </p>
+                    </div>
+        </div>
+    </div>
+</div>

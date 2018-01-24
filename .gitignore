@@ -1,0 +1,3 @@
+node-modules/
+server/uploads/*
+package-lock.json

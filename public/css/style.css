@@ -1,0 +1,60 @@
+.bg-light{
+    background: #374355!important;
+}
+
+body {
+    background-color: #C9D3DF;
+}
+
+.dropzone{
+    border: 0px solid #ffffff!important;
+    height: calc(100vh - 500px);
+}
+
+@media (max-width: 768px){
+    .dropzone {
+        height: 200px;
+    }
+}
+
+.card-tut {
+    background-color: var(--info);
+    border: 0px solid #000000!important;
+}
+
+.card-title{
+    font-family: Lobster!important;
+}
+.card-tut .card-title{
+    color: white;
+}
+
+.tut-text {
+    color: white;
+    font-size: 10pt;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.tut-pic{
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.back-to-upload a {
+    color: white!important;
+}
+
+.helper{
+    background: #3D4D65 url("../img/helpbg.png"); 
+    background-size: contain no-repeat center;
+    border: 1px solid #3D4D65;
+    color: white;
+}
+
+.json-formatter-row .string {
+    color: var(--info);
+}
