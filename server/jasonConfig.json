@@ -11,7 +11,7 @@
     "@type": "ScholarlyArticle",
     "name": "$H$",
     "author": "$A$, $B$",
-    "copyrightYear": "$NUM$20$C$",
+    "datePublished": "$NUM$20$C$",
     "about": [ "$F$", "$G$"],
     "volumeNumber": "$NUM$$C$",
     "articleSection": "Tourismus Wissen Quarterly",
