@@ -131,10 +131,18 @@ function toSchemaOrg(jsonArray) {
 
 function semantifyIt(schemaOrgArray) {
     let url = "https://semantify.it/api/annotation/" + jasonConfig.semantifyIt.key;
+    var annotationObject = {};
+    annotationObject["cid"] = "1234";
+    annotationObject["content"] = schemaOrgArray;
+
+    //push JSON object to JSON array
+    var bulk = [];
+    bulk.push(annotationObject);
+
     request({
         url: url,
         method: "POST",
-        json: schemaOrgArray
+        json: bulk
     }, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             console.log(body);
