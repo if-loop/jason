@@ -11,7 +11,8 @@ let exampleApp = angular.module('exampleApp', [
     'exampleServices',
     'thatisuday.dropzone',
     'jsonFormatter',
-    'tableSort'
+    'tableSort',
+    'ngclipboard'
 ]);
 
 exampleApp.directive('myRefresh',function($location,$route){

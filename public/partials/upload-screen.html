@@ -89,6 +89,11 @@
                 <div class="card" id="json-raw" style="margin-top: 20px;">
                         <div class="card-body">
                             <h4 class="card-title">File (as JSON)</h4>
+                            <div class="text-right">
+                                <button type="button" class="btn btn-primary" ngclipboard data-clipboard-text="{{uploadedFile.output}}" style="background-color: #4aa0b5; border-color: #4aa0b5;">
+                                        <i class="fa fa-clipboard" aria-hidden="true"></i> Copy to Clipboard
+                                </button>
+                            </div>
                             <p class="card-text">
                                 <json-formatter json="uploadedFile.output" open="1"></json-formatter>
                             </p>
